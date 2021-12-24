@@ -1,10 +1,12 @@
 import './App.css';
-import IntroApp from './Intro We/IntroApp';
+import CalculatorApp from './Calculator/CalculatorApp';
+// import IntroApp from './Intro We/IntroApp';
 
 function App() {
   return (
     <div className="App">
-      <IntroApp />
+      {/* <IntroApp /> */}
+      <CalculatorApp />
     </div>
   );
 }

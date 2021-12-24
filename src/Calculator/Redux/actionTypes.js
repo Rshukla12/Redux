@@ -1,0 +1,9 @@
+const constants = {
+    INCREMENT_VALUE: "INCREMENT_VALUE",
+    DECREMENT_VALUE: "DECREMENT_VALUE",
+    MULTIPLY_VALUE: "MULTIPLY_VALUE",
+    DIVIDE_VALUE: "DIVIDE_VALUE"
+}
+
+export default constants;
+
