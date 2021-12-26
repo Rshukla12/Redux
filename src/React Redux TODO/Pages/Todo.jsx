@@ -2,9 +2,11 @@ import { useDispatch } from "react-redux";
 import { getTodoFailure, getTodoRequest, getTodoSuccess } from "../Redux/actions";
 import ToDoInput from "../Components/TodoInput";
 import TodoList from "../Components/TodoList";
+import { useHistory } from "react-router-dom";
 
 const Todo = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     
     const fetchTodos = () => {
         dispatch( getTodoRequest() )
@@ -19,7 +21,10 @@ const Todo = () => {
 
     return (
         <>
-            <h1>TODO</h1>
+            <div>
+                <h1>TODO</h1>
+                <h1> <span style={{cursor:"pointer"}} onClick={()=>history.push("/completed")}>Show Only Completed</span></h1>
+            </div>
             <ToDoInput fetchTodos={fetchTodos} />
             <TodoList fetchTodos={fetchTodos} />
         </>
