@@ -31,12 +31,12 @@ const Task = () => {
 
     return (
         <div className={style.list}>
+            <h1> <span style={{cursor:"pointer"}} onClick={()=>history.push("/")}>Back To Home</span> <br/> Details</h1>
             {
                 isLoading ? (
                     <div>...Loading</div>
                 ) : item && (
                     <>
-                        <h1>Details</h1>
                         <div className={style.item} key={item.id} style={{background: item.status ? "rgba(32, 185, 32, 0.493)" : "white"}}>
                             <div 
                                 className={style.itemText} 

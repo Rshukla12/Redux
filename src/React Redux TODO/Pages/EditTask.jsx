@@ -72,12 +72,12 @@ const EditTask = () => {
 
     return (
         <div className={style.list}> 
+            <h1> <span style={{cursor:"pointer"}} onClick={()=>history.push("/")}>Back To Home</span> <br/>Edit Details</h1>
             {
                 isLoading ? (
                     <div>...Loading</div> 
                 ) : (
                     <>
-                        <h1>Edit Detail</h1>
                         <div className={style.item} key={item.id} style={{background: item.status ? "rgba(32, 185, 32, 0.493)" : "white"}}>
                             <div 
                                 className={style.itemText} 
