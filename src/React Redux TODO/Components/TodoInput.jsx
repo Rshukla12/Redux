@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addTodoRequest, addTodoSuccess, addTodoFailure } from "../Redux/actions";
+import { addTodoRequest, addTodoSuccess, addTodoFailure } from "../Redux/App/actions";
 import style from "./Todo.module.css";
 
 const ToDoInput = ({fetchTodos}) => {

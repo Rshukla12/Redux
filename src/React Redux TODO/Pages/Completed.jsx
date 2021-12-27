@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getTaskFailure, getTaskRequest, getTaskSuccess } from "../Redux/actions";
+import { getTaskFailure, getTaskRequest, getTaskSuccess } from "../Redux/App/actions";
 import style from "../Components/Todo.module.css";
 
 const Completed = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const { todos, isLoading, isError } = useSelector(state=>state, shallowEqual); 
+    const { todos, isLoading, isError } = useSelector(state=>state.app, shallowEqual); 
     
     
     const fetchTodos = () => {

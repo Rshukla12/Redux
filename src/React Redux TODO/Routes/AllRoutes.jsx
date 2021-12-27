@@ -1,28 +1,32 @@
 import { Switch, Route } from "react-router-dom";
 import Completed from "../Pages/Completed";
 import EditTask from "../Pages/EditTask";
+import Login from "../Pages/Login";
 import Task from "../Pages/Task";
 import Todo from "../Pages/Todo";
+import PrivateRoute from "./PrivateRoute";
 
 const AllRoutes = () => {
     return (
         <Switch>
-            <Route exact path="/">
+            <PrivateRoute exact path="/">
                 <Todo />
-            </Route>
-            <Route exact path="/todo/:id">
+            </PrivateRoute>
+            <PrivateRoute exact path="/todo/:id">
                 <Task />
-            </Route>
-            <Route exact path="/todo/:id/edit">
+            </PrivateRoute>
+            <PrivateRoute exact path="/todo/:id/edit">
                 <EditTask />
-            </Route>
-            <Route exact path="/completed">
+            </PrivateRoute>
+            <PrivateRoute exact path="/completed">
                 <Completed />
+            </PrivateRoute>
+            <Route exact path="/login">
+                <Login />
             </Route>
             <Route>
                 <div>Oops, this resource doesn't exist!</div>
             </Route>
-
         </Switch>
     )
 }

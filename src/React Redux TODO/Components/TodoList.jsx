@@ -5,7 +5,7 @@ import style from "./Todo.module.css";
 
 const TodoList = ({fetchTodos}) => {
     const history = useHistory();
-    const { todos, isLoading, isError } = useSelector(state=>state, shallowEqual); 
+    const { todos, isLoading, isError } = useSelector(state=>state.app, shallowEqual); 
     
     useEffect(() => {
         fetchTodos()

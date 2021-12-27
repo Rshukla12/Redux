@@ -1,6 +1,14 @@
 import constants from "./actionsType";
 
-const reducer = ( state, action ) => {
+const initStore = {
+    isLoading: false,
+    isError: false,
+    todos: [],
+    task: null
+}
+
+
+export const appReducer = ( state=initStore, action ) => {
     switch (action.type){
         case ( constants.ADD_TODO_REQUEST ): {
             return {
@@ -121,5 +129,3 @@ const reducer = ( state, action ) => {
         }
     }    
 }
-
-export default reducer;
