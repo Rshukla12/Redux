@@ -1,5 +1,6 @@
 import './App.css';
-import TodoApp from './React Redux TODO/TodoApp';
+import TodoApp from './Redux Thunk/TodoApp';
+// import TodoApp from './React Redux TODO/TodoApp';
 // import ReduxWeApp from './Redux - We/ReduxWeApp';
 // import TodoApp from './Todo App/TodoApp';
 // import CalculatorApp from './Calculator/CalculatorApp';
@@ -12,6 +13,7 @@ function App() {
       {/* <CalculatorApp /> */}
       {/* <TodoApp /> */}
       {/* <ReduxWeApp /> */}
+      {/* <TodoApp /> */}
       <TodoApp />
     </div>
   );
