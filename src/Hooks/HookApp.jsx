@@ -1,3 +1,4 @@
+import Github from "./Components/Github";
 import { useTimeout } from "./useTimeout"
 
 const HookApp = () => {
@@ -5,6 +6,7 @@ const HookApp = () => {
     return (
         <div>
             <h1>is ready ? { ready ? "Yes":"No" } </h1>
+            <Github />
         </div>
     )
 }
