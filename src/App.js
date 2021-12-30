@@ -1,5 +1,5 @@
 import './App.css';
-import UseDispatchApp from './useDispatch/UseDispatchApp';
+import UseReducerApp from './useReducer/UseReducerApp';
 // import HookApp from './Hooks/HookApp';
 // import TodoApp from './Redux Thunk/TodoApp';
 // import TodoApp from './React Redux TODO/TodoApp';
@@ -18,7 +18,7 @@ function App() {
       {/* <TodoApp /> */}
       {/* <TodoApp /> */}
       {/* <HookApp /> */}
-      <UseDispatchApp />
+      <UseReducerApp />
     </div>
   );
 }

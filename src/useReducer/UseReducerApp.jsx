@@ -1,11 +1,11 @@
 import Todo from "./Components/Todo";
 import { AppContextProvider } from "./Redux/AppContextProvider";
 
-const UseDispatchApp = () => {
+const UseReducerApp = () => {
     return(
         <AppContextProvider>
             <Todo />
         </AppContextProvider>
     )
 };
-export default UseDispatchApp;
+export default UseReducerApp;
