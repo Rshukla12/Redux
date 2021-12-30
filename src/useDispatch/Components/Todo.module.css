@@ -1,0 +1,86 @@
+/* For main styles */
+.todo {
+    width: 80%;
+    max-width: 24rem;
+    min-height: 20rem;
+    margin: 1rem auto 0rem;
+    padding: 0.25rem 1rem 1rem;
+    background-color: rgba(61, 169, 202, 0.534);
+    border-radius: 20px;
+}
+.show {
+    position: relative;
+    left: -15%;
+    font-size: 1.5rem;
+    top: 0.5rem;
+    border-radius: 5px;
+    background-color: rgba(32, 185, 32, 0.493);
+}
+/* for list */
+.list {
+    margin-top: 1rem;
+    max-height: 15rem;
+    overflow-y: scroll;
+}
+.list::-webkit-scrollbar {
+    display: none;
+}
+/* For item displaying */
+.item {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 0.1rem 0.2rem;
+    margin: 0.25rem 0rem;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}
+.itemText {
+    width: 70%;
+    max-width: 24rem;
+}
+.item > input[type="checkbox"]{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.25rem;
+}
+.item > button {
+    position: relative;
+    right: -0.3rem;
+    border-radius: 5px;
+    background-color: rgba(255, 4, 4, 0.651);
+}
+/* For input */
+.form {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+}
+.input {
+    width: 100%;
+    margin: auto;
+}
+.input > input[type="text"] {
+    width: 85%;
+    max-width: 20.7rem;
+    font-size: 1.5rem;
+    border: none;
+    position: relative;
+    top: -0.2rem;
+}
+.input > input[type="text"]:focus {
+    outline: none;
+}
+.input > input[type="submit"] {
+    font-size: 2rem;
+    background-color: white;
+    border: none;
+}
+
+.paper {
+    width: 20%;
+    margin: 12% auto;
+    padding: 2% 10%;
+}
