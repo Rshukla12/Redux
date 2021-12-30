@@ -1,4 +1,5 @@
-import Form from "./Components/Form";
+// import Form from "./Components/Form";
+import StopWatchTimer from "./Timer/StopWatchTimer";
 // import Github from "./Components/Github";
 import { useTimeout } from "./useTimeout"
 
@@ -8,7 +9,8 @@ const HookApp = () => {
         <div>
             <h1>is ready ? { ready ? "Yes":"No" } </h1>
             {/* <Github /> */}
-            <Form />
+            {/* <Form /> */}
+            <StopWatchTimer />
         </div>
     )
 }
