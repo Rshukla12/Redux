@@ -1,4 +1,4 @@
-import { actions } from "./actions";
+import { actions } from "./actionTypes";
 
 export const reducer = (state, action) => {
 	console.log(state);

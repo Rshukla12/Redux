@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { actions } from "./actions";
+import { actions } from "./actionTypes";
 import { AppContext } from "./AppContextProvider";
 
 const Counter = () => {
