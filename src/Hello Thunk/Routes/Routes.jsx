@@ -15,6 +15,9 @@ const Routes = () => {
             <Route exact path="/dashboard">
                 <Dashboard />
             </Route>
+            <Route>
+                <div>404! Not found</div>
+            </Route>
         </Switch>
     )
 }

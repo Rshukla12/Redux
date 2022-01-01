@@ -5,11 +5,19 @@ const initAuth = {
     isError: false,
     isAuth: false,
     token: null,
-    authFailed: null
+    authFailed: null,
+    username: null
 }
 
 export const authReducer = ( state=initAuth, action ) => {
     switch( action.type ){
+        case ( constants.CLEAN_AUTH ): {
+            return {
+                ...state,
+                ...action.payload
+            }
+        }
+
         case ( constants.SIGNUP_REQUEST ): {
             return {
                 ...state,
@@ -21,6 +29,7 @@ export const authReducer = ( state=initAuth, action ) => {
             return {
                 ...state,
                 isLoading: false,
+                isAuth: true
             }    
         }
         case ( constants.SIGNUP_FAILED ): {
@@ -42,7 +51,9 @@ export const authReducer = ( state=initAuth, action ) => {
             return {
                 ...state,
                 isLoading: false,
-                isAuth: true
+                isAuth: true,
+                username: action.payload.username,
+                token: action.payload.token
             }    
         }
         case ( constants.LOGIN_FAILED ): {

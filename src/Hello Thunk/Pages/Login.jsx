@@ -1,23 +1,31 @@
-import { shallowEqual, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Redirect } from "react-router-dom";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import Paper from "@mui/material/Paper"
+import { cleanAuth } from "../Redux/Auth/actions";
+import { handleLogin } from "../Redux/utils/api";
 
 const Login = () => {
-    const { isAuth, isLoading, isError, authFailed } = useSelector(state=>state, shallowEqual);
+    const dispatch = useDispatch();
+    const { isAuth, isLoading, isError, authFailed } = useSelector(state=>state.auth, shallowEqual);
+    const [fill, setFill] = useState(false);
     const [state, setState] = useState({
         username: "",
         password: ""
     });
 
     
-    const handleLogin = () => {
+    const onLogin = () => {
         for ( const key in state ){
-            if ( state[key].length <= 1 ) return;
+            if ( state[key].length <= 1 )  {
+                setFill(true)
+                return;
+            }
         }
-
+        dispatch( handleLogin( state ) );
+        setFill(false)
     }
 
     const handleChange = (e) => {
@@ -27,6 +35,10 @@ const Login = () => {
         });
     }
     
+    useEffect(() => {
+        dispatch( cleanAuth() )
+    }, []);
+    
     if ( isAuth ) return <Redirect to="/dashboard" />
 
     return (
@@ -34,11 +46,13 @@ const Login = () => {
             {
                 isLoading ? (
                     <div>...Loading</div>
-                ) : isError ? (
+                ) : isError && !authFailed ? (
                     <div>...Error</div>
                 ) : (
-                    <div>
-                        { authFailed && <div>{authFailed.message || "Please try Again"}</div> }
+                    <Paper sx={{padding: "2rem 2rem"}}>
+                        <h2>Login</h2>
+                        { authFailed && <div>{authFailed ? "Incorrect Password or Username" : "Please try Again" }</div> }
+                        { fill && <h4>All fields are required</h4> }
                         <form style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
                              
                             <TextField 
@@ -59,9 +73,9 @@ const Login = () => {
                                 required
                                 onChange={handleChange}
                             />  
-                            <Button onClick={handleLogin}>Login</Button>
+                            <Button variant="contained" sx={{width: "30%", margin:"auto"}}  onClick={onLogin}>Login</Button>
                         </form>
-                    </div>
+                    </Paper>
                 )
             }
         </div>

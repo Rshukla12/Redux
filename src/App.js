@@ -1,5 +1,6 @@
 import './App.css';
-import CustomHookApp from './Custom Hooks - We/CustomHookApp';
+import HelloThunkApp from './Hello Thunk/HelloThunkApp';
+// import CustomHookApp from './Custom Hooks - We/CustomHookApp';
 // import UseReducerApp from './useReducer/UseReducerApp';
 // import HookApp from './Hooks/HookApp';
 // import TodoApp from './Redux Thunk/TodoApp';
@@ -20,7 +21,8 @@ function App() {
       {/* <TodoApp /> */}
       {/* <HookApp /> */}
       {/* <UseReducerApp /> */}
-      <CustomHookApp />
+      {/* <CustomHookApp /> */}
+      <HelloThunkApp />
     </div>
   );
 }

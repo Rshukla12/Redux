@@ -16,7 +16,7 @@ export const successSignUp = ( res ) => ({
 });
 
 export const failureSignUp = ( res ) => ({
-    type: constants.SIGNUP_REQUEST,
+    type: constants.SIGNUP_FAILED,
     payload: {
         isLoading: false,
         isError: true,
@@ -32,20 +32,32 @@ export const requestLogin = () => ({
     }
 });
 
-export const successLogin = ( res ) => ({
+export const successLogin = ( token, username ) => ({
     type: constants.LOGIN_SUCCESS,
     payload: {
         isLoading: false,
         isAuth: true,
-        token: res.token
+        token,
+        username
     }
 });
 
 export const failureLogin = ( res ) => ({
-    type: constants.LOGIN_REQUEST,
+    type: constants.LOGIN_FAILED,
     payload: {
         isLoading: false,
         isError: true,
         authFailed: res,
     }
 });
+
+export const cleanAuth = () => ({
+    type: constants.CLEAN_AUTH,
+    payload: {
+        isLoading: false,
+        isError: false,
+        authFailed: null,
+        isAuth: false,
+        username: ""
+    }
+})
