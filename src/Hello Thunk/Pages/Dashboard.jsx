@@ -8,7 +8,7 @@ import { fetchProfile } from "../Redux/utils/api";
 
 const Dashboard = () => {
     const { isAuth, token, username } = useSelector(state=>state.auth, shallowEqual);
-    const { isLoading, isError, error, profile } = useSelector(state=>state.profile, shallowEqual);
+    const { isLoading, isError, profile } = useSelector(state=>state.profile, shallowEqual);
     const dispatch = useDispatch();
 
 

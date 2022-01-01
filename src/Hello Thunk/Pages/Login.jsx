@@ -9,7 +9,7 @@ import { handleLogin } from "../Redux/utils/api";
 
 const Login = () => {
     const dispatch = useDispatch();
-    const { isAuth, isLoading, isError, authFailed } = useSelector(state=>state.auth, shallowEqual);
+    const { isAuth, token, isLoading, isError, authFailed } = useSelector(state=>state.auth, shallowEqual);
     const [fill, setFill] = useState(false);
     const [state, setState] = useState({
         username: "",
@@ -36,7 +36,7 @@ const Login = () => {
     }
     
     useEffect(() => {
-        dispatch( cleanAuth() )
+        !token && dispatch( cleanAuth() )
     }, []);
     
     if ( isAuth ) return <Redirect to="/dashboard" />

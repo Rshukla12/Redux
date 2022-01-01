@@ -8,7 +8,7 @@ import { handleSignUp } from "../Redux/utils/api";
 import { cleanAuth } from "../Redux/Auth/actions";
 
 const Registration = () => {
-    const { isAuth, isLoading, isError, authFailed } = useSelector(state=>state.auth, shallowEqual);
+    const { isAuth, token, isLoading, isError, authFailed } = useSelector(state=>state.auth, shallowEqual);
     const [fill, setFill] = useState(false);
     const dispatch = useDispatch();
     const [state, setState] = useState({
@@ -39,7 +39,7 @@ const Registration = () => {
     }
 
     useEffect(() => {
-        dispatch( cleanAuth() )
+        !token && dispatch( cleanAuth() )
     }, []);
 
     if ( isAuth ) return <Redirect to="/login" />
