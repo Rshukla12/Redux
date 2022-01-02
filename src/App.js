@@ -1,5 +1,6 @@
 import './App.css';
-import PinApp from './React PIN/PinApp';
+import CreditCard from './React Credit Card/CreditCard';
+// import PinApp from './React PIN/PinApp';
 // import HelloThunkApp from './Hello Thunk/HelloThunkApp';
 // import CustomHookApp from './Custom Hooks - We/CustomHookApp';
 // import UseReducerApp from './useReducer/UseReducerApp';
@@ -24,7 +25,8 @@ function App() {
       {/* <UseReducerApp /> */}
       {/* <CustomHookApp /> */}
       {/* <HelloThunkApp /> */}
-      <PinApp />
+      {/* <PinApp /> */}
+      <CreditCard />
     </div>
   );
 }
