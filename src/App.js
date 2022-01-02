@@ -1,5 +1,6 @@
 import './App.css';
-import HelloThunkApp from './Hello Thunk/HelloThunkApp';
+import PinApp from './React PIN/PinApp';
+// import HelloThunkApp from './Hello Thunk/HelloThunkApp';
 // import CustomHookApp from './Custom Hooks - We/CustomHookApp';
 // import UseReducerApp from './useReducer/UseReducerApp';
 // import HookApp from './Hooks/HookApp';
@@ -22,7 +23,8 @@ function App() {
       {/* <HookApp /> */}
       {/* <UseReducerApp /> */}
       {/* <CustomHookApp /> */}
-      <HelloThunkApp />
+      {/* <HelloThunkApp /> */}
+      <PinApp />
     </div>
   );
 }
