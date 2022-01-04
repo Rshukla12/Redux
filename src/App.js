@@ -1,5 +1,6 @@
 import './App.css';
-import MemoApp from './Memo/MemoApp';
+import BlogApp from './Post App/BlogApp';
+// import MemoApp from './Memo/MemoApp';
 // import CreditCard from './React Credit Card/CreditCard';
 // import PinApp from './React PIN/PinApp';
 // import HelloThunkApp from './Hello Thunk/HelloThunkApp';
@@ -28,7 +29,8 @@ function App() {
       {/* <HelloThunkApp /> */}
       {/* <PinApp /> */}
       {/* <CreditCard /> */}
-      <MemoApp />
+      {/* <MemoApp /> */}
+      <BlogApp />
     </div>
   );
 }
