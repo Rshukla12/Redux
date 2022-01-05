@@ -1,16 +1,21 @@
-import { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import BlogInput from "./Components/BlogInput";
 import { v4 as uuid } from "uuid";
-import BlogDisplay from "./Components/BlogDisplay";
+import BlogDisplay, { MemoBlogDisplay } from "./Components/BlogDisplay";
 
 const BlogApp = () => {
     const [count, setCount] = useState(0);
     const [state, setState] = useState([]);
+    const timerRef = useRef(null);
 
     useEffect(() => {
-        setInterval(()=> {
+        if ( !timerRef.current ) timerRef.current = setInterval(()=> {
             setCount(count=>count+1);
         }, 1000);
+
+        return () => {
+            timerRef.current && clearInterval(timerRef.current);
+        }
     }, []);
 
     const onPostCreate = ( {title, body} ) => {
@@ -23,9 +28,13 @@ const BlogApp = () => {
         setState(prev => [...prev, newTask]);
     };
 
-    const toggleVerify = ( id ) => {
-        setState( prev => prev.map(blog=> blog.id === id ? { ...blog, verify: !blog.verify } : blog ) )
-    }
+    const toggleVerify = useCallback(  ( id ) => {
+        setState( state.map(blog=> blog.id === id ? { ...blog, verify: !blog.verify } : blog ) )
+    },[state]);
+
+    // const toggleVerify = ( id ) => {
+    //     setState( prev => prev.map(blog=> blog.id === id ? { ...blog, verify: !blog.verify } : blog ) )
+    // }
 
     return (
         <div style={{display: "flex", flexDirection: "column", gap: "1rem", width: "50%", margin: "auto"}}>
@@ -34,7 +43,15 @@ const BlogApp = () => {
             <div style={{display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {
                     state.map( post => (
-                        <BlogDisplay
+                        // <BlogDisplay
+                        //     key={post.id}
+                        //     title={post.title}
+                        //     body={post.body}
+                        //     id={post.id}
+                        //     verify={post.verify}
+                        //     onToggle={toggleVerify}
+                        // />
+                        <MemoBlogDisplay
                             key={post.id}
                             title={post.title}
                             body={post.body}
