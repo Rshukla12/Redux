@@ -29,7 +29,9 @@ const BlogApp = () => {
     };
 
     const toggleVerify = useCallback(  ( id ) => {
-        setState( state.map(blog=> blog.id === id ? { ...blog, verify: !blog.verify } : blog ) )
+        console.log(state);
+        const updatedState = state.map(blog=> blog.id === id ? { ...blog, verify: !blog.verify } : blog );
+        setState( updatedState );
     },[state]);
 
     // const toggleVerify = ( id ) => {

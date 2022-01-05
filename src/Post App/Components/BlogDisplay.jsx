@@ -42,7 +42,7 @@ const BlogDisplay = ({
     verify,
     onToggle
 }) => {
-    const color = useMemo(()=>getRandomColor(200), []);
+    const color = useMemo(()=>getRandomColor(2000), []);
     const styles = useStyles();
     return (
         <Paper className={styles.root}>
@@ -57,5 +57,5 @@ const BlogDisplay = ({
     )
 };
 
-export const MemoBlogDisplay = React.memo(BlogDisplay, areEqual);
+export const MemoBlogDisplay = React.memo(BlogDisplay);
 export default BlogDisplay;
