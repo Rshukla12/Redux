@@ -1,5 +1,6 @@
 import './App.css';
-import BlogApp from './Post App/BlogApp';
+import SearchBarApp from './Search Bar/SearchBarApp';
+// import BlogApp from './Post App/BlogApp';
 // import MemoApp from './Memo/MemoApp';
 // import CreditCard from './React Credit Card/CreditCard';
 // import PinApp from './React PIN/PinApp';
@@ -30,7 +31,8 @@ function App() {
       {/* <PinApp /> */}
       {/* <CreditCard /> */}
       {/* <MemoApp /> */}
-      <BlogApp />
+      {/* <BlogApp /> */}
+      <SearchBarApp />
     </div>
   );
 }
